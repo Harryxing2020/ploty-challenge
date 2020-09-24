@@ -123,7 +123,14 @@ function showbubbleChart(sample, name) {
     mode: 'markers',
     marker: {
       size: sampleResult.sample_values, // the size of the bubble by the value of experiment 
-      color: sampleResult.sample_values.map(element => element * 100),
+      // color: sampleResult.sample_values.map(element => element * 100),
+
+
+      color: sampleResult.otu_ids,
+      colorscale: "Earth"
+
+
+
     }
   }];
 
@@ -132,6 +139,9 @@ function showbubbleChart(sample, name) {
     autosize: true,
     xaxis: { title: "OTU ID" },
     title: "Bubble chart",
+    config: {
+      'displayModeBar': true
+  }
   };
   // bubble chart layout
   Plotly.newPlot('bubble', traceDisplay2, disPlayLayout2);
