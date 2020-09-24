@@ -114,18 +114,22 @@ function showGauge(metadata, name) {
 
   var traceGauge = [
     {
+      // setup gauge type
       type: "indicator",
       mode: "gauge+number+delta",
+      // setup the value of indicator
       value: sampleMeta[0].wfreq,
-      title: { text: "Belly Button Wash Frequency (Scrubs Per Week)" },
-      delta: { reference: 0, increasing: { color: "red" } },
+      // setup the display title
+      title: { text: "Belly Button Wash Frequency (Scrubs Per Week)",
+            font: { size: 18, color: 'black' }},
+      delta: { reference: 0, increasing: { color: "RebeccaPurple" } },
       gauge: {
         axis: { range: [null, 9], tickwidth: 1, tickcolor: "darkblue" },
-        bar: { color: "black" },
+        bar: { color: "darkblue" },
         bgcolor: "white",
         borderwidth: 2,
         bordercolor: "gray",
-
+        //setup gauge color
         steps: [
           { range: [0, 1], color: "#009a60" },
           { range: [1, 2], color: '#4aa84e' },
