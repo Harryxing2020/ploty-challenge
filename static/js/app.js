@@ -291,10 +291,8 @@ d3.json("data/samples.json").then((dataset) => {
     // Acquire the value property of the inputEelement and remove BB_.
     var userSample = inputElement.property("value").replace('BB_', '');
 
+    //Acquire the the value property of the radio input
     checkedValue = getCheckedRadioValue("type");
-
-
-    console.log(checkedValue)
 
     if (checkedValue==='bar'){
     //show the bar chart
