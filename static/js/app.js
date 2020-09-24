@@ -120,8 +120,10 @@ function showGauge(metadata, name) {
       // setup the value of indicator
       value: sampleMeta[0].wfreq,
       // setup the display title
-      title: { text: "Belly Button Wash Frequency (Scrubs Per Week)",
-            font: { size: 18, color: 'black' }},
+      title: {
+        text: "Belly Button Wash Frequency (Scrubs Per Week)",
+        font: { size: 18, color: 'black' }
+      },
       delta: { reference: 0, increasing: { color: "RebeccaPurple" } },
       gauge: {
         axis: { range: [null, 9], tickwidth: 1, tickcolor: "darkblue" },
@@ -150,16 +152,16 @@ function showGauge(metadata, name) {
       }
     }
   ];
-// gauge chart layout 
+  // gauge chart layout 
   var disPlayLayout3 = {
-    width: 500,
+    width: 400,
     height: 400,
     margin: { t: 0, r: 25, l: 25, b: 25, pad: 0 },
 
     paper_bgcolor: "white",
     font: { color: "darkblue", family: "Arial" }
   };
-// gauge chart layout
+  // gauge chart layout
   Plotly.newPlot('gauge', traceDisplay3, disPlayLayout3);
 }
 /////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -171,27 +173,25 @@ function showGauge(metadata, name) {
 // function4: show otu info
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-
 function showInfo(metadata, name) {
-
+  //lookup the data by experiment name 
   var sampleMeta = metadata.filter(m => m.id === parseInt(name));
-
+  // selection variable in order to update info
   var sample_metadata = d3.select("#sample-metadata");
+  // clear the html
   sample_metadata.html("");
-  Object.entries(sampleMeta[0]).forEach(([key, value]) => {
-           var row = sample_metadata.append("p");
-           row.text(`${key.toUpperCase()}: ${value}`);
-       })
 
+  // Use Object.entries to add each key and value pair to the panel
+  Object.entries(sampleMeta[0]).forEach(([key, value]) => {
+    var row = sample_metadata.append("p");
+    row.text(`${key.toUpperCase()}: ${value}`);
+  })
 
 }
-
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 // function4 : end
 /////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 // program entrance
