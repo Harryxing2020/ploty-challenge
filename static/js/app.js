@@ -105,7 +105,6 @@ function showpieChart(sample, name) {
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 // function4: bubble chart
 /////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -215,7 +214,7 @@ function showGauge(metadata, name) {
 
 function showInfo(metadata, name) {
   //lookup the data by experiment name 
-  var sampleMeta = metadata.filter(m => m.id === parseInt(name));
+  var sampleMeta = metadata.filter(item => item.id === parseInt(name));
   // selection variable in order to update info
   var sample_metadata = d3.select("#sample-metadata");
   // clear the html
