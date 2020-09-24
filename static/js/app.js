@@ -176,48 +176,14 @@ function showInfo(metadata, name) {
 
   var sampleMeta = metadata.filter(m => m.id === parseInt(name));
 
-  console.log(sampleMeta)
-
-  // var sample_metadata = d3.select("#sample-metadata").selectAll("div").data(sampleMeta);
-
-  // "metadata": [
-  //   {
-  //     "id": 940,
-  //     "ethnicity": "Caucasian",
-  //     "gender": "F",
-  //     "age": 24.0,
-  //     "location": "Beaufort/NC",
-  //     "bbtype": "I",
-  //     "wfreq": 2.0
-  //   },
-
-  // var sample_metadata = d3.select("#sample-metadata");
-
-  // sample_metadata.html("");
+  var sample_metadata = d3.select("#sample-metadata");
+  sample_metadata.html("");
+  Object.entries(sampleMeta[0]).forEach(([key, value]) => {
+           var row = sample_metadata.append("p");
+           row.text(`${key.toUpperCase()}: ${value}`);
+       })
 
 
-  // Object.entries(sample).forEach(([key, value]) => {
-  //         var row = sample_metadata.append("p");
-  //         row.text(`${key}: ${value}`);
-
-  //     })
-
-
-
-  // selection.enter()
-  //   .append("div")
-  //   .merge(selection)
-  //   .html(function (d) {
-  //     return `<p>id: ${d.id}</p>
-  //       <p>ethnicity: ${d.ethnicity}</p>
-  //       <p>gender: ${d.gender}</p>
-  //       <p>age: ${d.age}</p>
-  //       <p>location: ${d.location}</p>
-  //       <p>bbtype: ${d.bbtype}</p>
-  //       <p>wfreq: ${d.wfreq}</p>`
-  //   });
-  // // Removed old data //
-  // selection.exit().remove();
 }
 
 
