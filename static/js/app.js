@@ -270,8 +270,6 @@ d3.json("data/samples.json").then((dataset) => {
   //show the first lab data's Gauge chart
   showGauge(metadata, names[0])
 
-
-
   //show the first bubble chart
   showbubbleChart(sample, names[0])
 
@@ -287,11 +285,17 @@ d3.json("data/samples.json").then((dataset) => {
 
     checkedValue = getCheckedRadioValue("type");
 
-    console.log(checkedValue)
-    //show the bar and bubble chart
-    // showbarChart(sample, userSample);
 
-    showpieChart(sample, userSample);
+    console.log(checkedValue)
+
+    if (checkedValue==='bar'){
+    //show the bar chart
+      showbarChart(sample, userSample);
+    } else {
+    //show the Pie chart
+      showpieChart(sample, userSample);
+    }
+
     //show data info
     showInfo(metadata, userSample)
     //show Gauge chart
