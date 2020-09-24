@@ -82,7 +82,7 @@ function showbubbleChart(sample, name) {
     x: sampleResult.otu_ids, //X axis, show experiment ID
     y: sampleResult.sample_values, //Y axis, show experiment result
     text: sampleResult.otu_labels, // show dynamic info on the bar
-    
+
     mode: 'markers',
     marker: {
       size: sampleResult.sample_values, // the size of the bubble by the value of experiment 
@@ -195,6 +195,14 @@ function showInfo(metadata, name) {
 // function4 : end
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
+function getCheckedRadioValue(radioGroupName) {
+  var rads = document.getElementsByName(radioGroupName),
+    i;
+  for (i = 0; i < rads.length; i++)
+    if (rads[i].checked)
+      return rads[i].value;
+  return null; // or undefined, or your preferred default for none checked
+}
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 // program entrance
 /////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -223,7 +231,7 @@ d3.json("data/samples.json").then((dataset) => {
   //show the first lab data's Gauge chart
   showGauge(metadata, names[0])
 
-  // updateMetadata(6)
+
 
   //show the first bubble chart
   showbubbleChart(sample, names[0])
@@ -238,6 +246,9 @@ d3.json("data/samples.json").then((dataset) => {
     // Acquire the value property of the inputEelement and remove BB_.
     var userSample = inputElement.property("value").replace('BB_', '');
 
+    checkedValue = getCheckedRadioValue("type");
+
+    console.log(checkedValue)
     //show the bar and bubble chart
     showbarChart(sample, userSample);
     //show data info
