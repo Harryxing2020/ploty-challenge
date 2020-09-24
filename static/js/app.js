@@ -82,12 +82,9 @@ function showbarChart(sample, name) {
 
 function showpieChart(sample, name) {
 
-
   var showData = getTop10OOTU(sample, name);
-
-
   var trace1 = {
-    labels: showData.map(item => 'OTU ' + item.otuId),
+    labels: showData.map(item => item.otuId),
     values: showData.map(item => item.sampleValues),
     type: 'pie'
   };
