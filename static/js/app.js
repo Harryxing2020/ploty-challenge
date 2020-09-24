@@ -82,6 +82,7 @@ function showbubbleChart(sample, name) {
     x: sampleResult.otu_ids, //X axis, show experiment ID
     y: sampleResult.sample_values, //Y axis, show experiment result
     text: sampleResult.otu_labels, // show dynamic info on the bar
+    
     mode: 'markers',
     marker: {
       size: sampleResult.sample_values, // the size of the bubble by the value of experiment 
@@ -93,7 +94,8 @@ function showbubbleChart(sample, name) {
   var disPlayLayout2 = {
     height: 700,
     width: 1200,
-    xaxis: { title: "OTU ID" }
+    xaxis: { title: "OTU ID" },
+    title: "Bubble chart",
   };
   // bubble chart layout
   Plotly.newPlot('bubble', traceDisplay2, disPlayLayout2);
