@@ -162,7 +162,7 @@ function showGauge(metadata, name) {
       // setup the display title
       title: {
         text: "Belly Button Wash Frequency (Scrubs Per Week)",
-        font: { size: 18, color: 'black' }
+        font: { size: 14, color: 'black' }
       },
       delta: { reference: 0, increasing: { color: "RebeccaPurple" } },
       gauge: {
@@ -194,8 +194,9 @@ function showGauge(metadata, name) {
   ];
   // gauge chart layout 
   var disPlayLayout3 = {
-    width: 300,
-    height: 300,
+    // width: 400,
+    // height: 400,
+    autosize: true,
     margin: { t: 0, r: 25, l: 25, b: 25, pad: 0 },
 
     paper_bgcolor: "white",
