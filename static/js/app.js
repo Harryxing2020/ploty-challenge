@@ -130,8 +130,7 @@ function showbubbleChart(sample, name) {
 
   // BUbble chart layout 
   var disPlayLayout2 = {
-    height: 700,
-    width: 1200,
+    autosize: true,
     xaxis: { title: "OTU ID" },
     title: "Bubble chart",
   };
