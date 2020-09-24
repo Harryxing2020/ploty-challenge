@@ -112,7 +112,7 @@ function showGauge(metadata, name) {
   //lookup the data by experiment name 
   var sampleMeta = metadata.filter(m => m.id === parseInt(name));
 
-  var traceGauge = [
+  var traceDisplay3 = [
     {
       // setup gauge type
       type: "indicator",
@@ -150,8 +150,8 @@ function showGauge(metadata, name) {
       }
     }
   ];
-
-  var layout = {
+// gauge chart layout 
+  var disPlayLayout3 = {
     width: 500,
     height: 400,
     margin: { t: 0, r: 25, l: 25, b: 25, pad: 0 },
@@ -159,8 +159,8 @@ function showGauge(metadata, name) {
     paper_bgcolor: "white",
     font: { color: "darkblue", family: "Arial" }
   };
-
-  Plotly.newPlot('gauge', traceGauge, layout);
+// gauge chart layout
+  Plotly.newPlot('gauge', traceDisplay3, disPlayLayout3);
 }
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 // function3 : end
@@ -168,7 +168,8 @@ function showGauge(metadata, name) {
 
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////
-
+// function4: show otu info
+/////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 function showInfo(metadata, name) {
