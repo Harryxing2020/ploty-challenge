@@ -55,9 +55,9 @@ function showbarChart(sample, name) {
   // Bar layout
   var disPlayLayout1 = {
     title: { text: "The top 10 OTUs" },
-    autosize: false,
-    height: 400,
-    width: 400,
+    autosize: true,
+    // height: 400,
+    // width: 400,
     margin: {
       l: 100,
       r: 10,
