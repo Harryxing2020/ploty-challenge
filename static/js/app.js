@@ -85,21 +85,20 @@ function showpieChart(sample, name) {
 
   var showData = getTop10OOTU(sample, name);
 
-  
-var trace1 = {
-  labels: ["beer", "wine", "martini", "margarita",
-      "ice tea", "rum & coke", "mai tai", "gin & tonic"],
-  values: [22.7, 17.1, 9.9, 8.7, 7.2, 6.1, 6.0, 4.6],
-  type: 'pie'
-};
 
-var data = [trace1];
+  var trace1 = {
+    labels: showData.map(item => 'OTU ' + item.otuId),
+    values: showData.map(item => item.sampleValues),
+    type: 'pie'
+  };
 
-var layout = {
-  title: "The top 10 OTUs",
-};
+  var data = [trace1];
 
-Plotly.newPlot("bar", data, layout);
+  var layout = {
+    title: "The top 10 OTUs",
+  };
+
+  Plotly.newPlot("bar", data, layout);
 
 }
 /////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -290,7 +289,9 @@ d3.json("data/samples.json").then((dataset) => {
 
     console.log(checkedValue)
     //show the bar and bubble chart
-    showbarChart(sample, userSample);
+    // showbarChart(sample, userSample);
+
+    showpieChart(sample, userSample);
     //show data info
     showInfo(metadata, userSample)
     //show Gauge chart
