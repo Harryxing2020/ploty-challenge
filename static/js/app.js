@@ -89,10 +89,12 @@ function showpieChart(sample, name) {
     type: 'pie'
   };
 
-  var data = [trace1];
+  var traceDisplay1 = [trace1];
 
-  var layout = {
-    title: "The top 10 OTUs",
+  var disPlayLayout1 = {
+    title: { text: "The top 10 OTUs" },
+    autosize: true,
+    showlegend: false
   };
 
   Plotly.newPlot("bar", data, layout);
